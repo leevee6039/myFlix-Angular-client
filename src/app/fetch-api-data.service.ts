@@ -18,12 +18,22 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
 
   /**
-   * userRegistration
+   * userRegistration -- API call to User registration
    */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * userLogin -- API call to User login
+   */
+  public userLogin(userDetails: any): Observable<any> {
+    console.log(userDetails);
+    return this.http
+      .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
 
@@ -38,22 +48,6 @@ export class FetchApiDataService {
     return throwError(
       () => new Error('Something bad happened; please try gagin later.')
     );
-  }
-
-  // API call to User registration
-  registration(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http
-      .post(`${apiUrl}users`, userDetails)
-      .pipe(catchError(this.handleError));
-  }
-
-  // API call to User login
-  login(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http
-      .post(`${apiUrl}login`, userDetails)
-      .pipe(catchError(this.handleError));
   }
 
   // API call to get all movies

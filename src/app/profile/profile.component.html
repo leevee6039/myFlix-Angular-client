@@ -13,15 +13,15 @@
       <p><b>Birthday:</b> {{ user.Birthday | date }}</p>
     </mat-card-content>
 
-    <!-- Update Profile Information & Delete Profile -->
+    <!-- Edit Profile Information & Delete Profile -->
     <mat-card-actions class="user-profile-actions">
       <button
         mat-raised-button
-        (click)="openUpdateProfileDialog()"
+        (click)="openEditProfileDialog()"
         color="primary"
       >
         <mat-icon>edit</mat-icon>
-        Update Profile
+        Edit Profile
       </button>
       <button mat-raised-button (click)="deleteProfile()" color="warn">
         <mat-icon>delete_forever</mat-icon>

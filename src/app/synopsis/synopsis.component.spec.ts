@@ -11,7 +11,9 @@ describe('SynopsisComponent', () => {
       declarations: [ SynopsisComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(SynopsisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

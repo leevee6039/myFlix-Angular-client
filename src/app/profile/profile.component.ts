@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
-import { UpdateProfileComponent } from '../update-profile/update-profile.component';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -30,6 +30,7 @@ export class ProfileComponent implements OnInit {
   /**
    * Gets user data from api call and sets the user variable to returned JSON file
    * @returns object holding user information
+   * @function getUser
    */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
@@ -40,16 +41,17 @@ export class ProfileComponent implements OnInit {
   }
 
   /**
-   * opens the update profile dialog from UpdateProfileComponent to allow user to update their details
+   * opens the edit profile dialog from EditProfileComponent to allow user to edit their details
    */
-  openUpdateProfileDialog(): void {
-    this.dialog.open(UpdateProfileComponent, {
+  openEditProfileDialog(): void {
+    this.dialog.open(EditProfileComponent, {
       width: '300px',
     });
   }
 
   /**
    * deletes the user profile, redirects to welcome screen
+   * @function deleteUser
    */
   deleteProfile(): void {
     if (

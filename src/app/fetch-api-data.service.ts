@@ -49,9 +49,9 @@ export class FetchApiDataService {
    */
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
-      console.error('Some error occured:', error.error.message);
+      console.log('Some error occured:', error.error.message);
     } else {
-      console.error(
+      console.log(
         `Error Status code ${error.status}, ` + `Error Body is: ${error.error}`
       );
     }
@@ -126,7 +126,7 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http
-      .get(`${apiUrl}/${user}`, {
+      .get(`${apiUrl}users/${user}`, {
         headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
@@ -159,7 +159,7 @@ export class FetchApiDataService {
         `${apiUrl}users/${user}/movies/${movieID}`,
         { FavoriteMovie: movieID },
         {
-          headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+          headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
         }
       )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
@@ -171,7 +171,7 @@ export class FetchApiDataService {
    * @returns JSON object holding data about the updated user
    */
 
-  updateUser(updateDetails: any): Observable<any> {
+  editUser(updateDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http

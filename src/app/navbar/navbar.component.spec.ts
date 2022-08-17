@@ -11,7 +11,9 @@ describe('NavbarComponent', () => {
       declarations: [ NavbarComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -3,24 +3,24 @@ $cardColor: #fff;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
-.signup-dialog {
+.update-profile-dialog {
   background-color: $cardColor;
   margin-top: 0;
   box-shadow: none;
 }
 
-.signup-dialog-title {
+.update-profile-dialog-title {
   color: $textColor;
 }
 
-.signup-dialog-content {
+.update-profile-dialog-content {
   color: $textColor;
 }
 
-::ng-deep .signup-custom>mat-dialog-container {
+::ng-deep .update-profile-custom>mat-dialog-container {
   background-color: $cardColor;
 }
 
-.signup-actions {
+.update-profile-actions {
   display: flex;
 }

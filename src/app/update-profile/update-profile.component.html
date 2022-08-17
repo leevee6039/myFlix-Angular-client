@@ -1,58 +1,59 @@
-<mat-card class="signup-dialog">
-  <mat-card-header class="signup-dialog-header">
-    <mat-card-title class="signup-dialog-title">Sign Up!</mat-card-title>
+<mat-card class="update-profile-dialog">
+  <mat-card-header>
+    <mat-card-title class="update-profile-dialog-title">
+      Upadte your profile Information
+    </mat-card-title>
   </mat-card-header>
-  <mat-card-content class="signup-dialog-content">
+  <mat-card-content class="upadte-profile-dialog-conetnt">
     <form>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Username"
-          placeholder="Username"
+          placeholder="Enter Username"
           type="text"
           name="Username"
-          required
         />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Password"
+          placeholder="Enetr Password"
           type="password"
-          placeholder="Password"
           name="Password"
-          required
         />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Email"
+          placeholder="Enetr Email"
           type="email"
-          placeholder="Email"
           name="Email"
-          required
         />
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Birthday"
+          placeholder="Enter DOB"
           type="date"
-          placeholder="Birthday"
           name="Birthday"
         />
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions class="signup-actions">
+  <mat-card-actions class="update-profile-actions">
+    <button mat-raised-button (click)="updateUser()">
+      Update your details
+    </button>
     <button
-      mat-raised-button
-      (click)="registerUser()"
-      color="primary"
-      class="signup-button"
+      mat-storked-button
+      aria-label="Close the edit profile button"
+      mat-dialog-close
     >
-      Sign Up
+      X
     </button>
   </mat-card-actions>
 </mat-card>

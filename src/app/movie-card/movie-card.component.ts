@@ -90,7 +90,7 @@ export class MovieCardComponent implements OnInit {
       data: {
         Name: name,
         Bio: bio,
-        Birthday: birthday,
+        Birth: birthday,
       },
       // Assign dialog width
       width: '500px',

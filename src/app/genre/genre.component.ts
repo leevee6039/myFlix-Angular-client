@@ -8,7 +8,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class GenreComponent implements OnInit {
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { Name: string; Description: string }
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      Name: string;
+      Description: string;
+    }
   ) {}
 
   ngOnInit(): void {}

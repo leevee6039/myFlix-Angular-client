@@ -1,19 +1,17 @@
 <div class="welcome-page">
   <mat-card class="welcome-card">
     <mat-card-header class="welcome-card-header">
-      <mat-card-title class="welcome-card-title"
-        >Welcome to my Flix!</mat-card-title
-      >
+      <mat-card-title>Welcome to myFlix!</mat-card-title>
     </mat-card-header>
-    <mat-card-actions>
+    <mat-card-actions class="welcome-card-actions">
       <button
         mat-raised-button
-        color="basic"
         (click)="openUserRegistrationDialog()"
+        color="basic"
       >
         <mat-icon>how_to_reg</mat-icon> Sign up
       </button>
-      <button mat-raised-button color="primary" (click)="openUserLoginDialog()">
+      <button mat-raised-button (click)="openUserLoginDialog()" color="primary">
         <mat-icon>login</mat-icon> Login
       </button>
     </mat-card-actions>

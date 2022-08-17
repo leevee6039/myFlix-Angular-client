@@ -28,12 +28,12 @@ export class ProfileComponent implements OnInit {
   }
 
   /**
-   * gets user data from api call and sets the user variable to returned JSON file
-   * @retruns object holding user information
+   * Gets user data from api call and sets the user variable to returned JSON file
+   * @returns object holding user information
    */
   getUser(): void {
-    this.fetchApiData.getUser().subscribe((response: any) => {
-      this.user = response;
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.user = resp;
       console.log(this.user);
       return this.user;
     });
@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
   deleteProfile(): void {
     if (
       confirm(
-        'Are you sure you want to delete your account? This cannot be undone.'
+        'Are you sure you want to delete your account? This cannnot be undone.'
       )
     ) {
       this.router.navigate(['welcome']).then(() => {

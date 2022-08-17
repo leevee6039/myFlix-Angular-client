@@ -4,13 +4,14 @@
       Upadte your profile Information
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content class="upadte-profile-dialog-conetnt">
+  <mat-card-content class="upadte-profile-dialog-content">
     <form>
       <mat-form-field>
         <input
           matInput
           [(ngModel)]="userData.Username"
-          placeholder="Enter Username"
+          placeholder="Enter
+        Username"
           type="text"
           name="Username"
         />
@@ -19,7 +20,7 @@
         <input
           matInput
           [(ngModel)]="userData.Password"
-          placeholder="Enetr Password"
+          placeholder="Enter Password"
           type="password"
           name="Password"
         />
@@ -28,7 +29,7 @@
         <input
           matInput
           [(ngModel)]="userData.Email"
-          placeholder="Enetr Email"
+          placeholder="Enter Email"
           type="email"
           name="Email"
         />
@@ -45,13 +46,14 @@
     </form>
   </mat-card-content>
   <mat-card-actions class="update-profile-actions">
-    <button mat-raised-button (click)="updateUser()">
+    <button mat-raised-button (click)="updateUser()" color="primary">
       Update your details
     </button>
     <button
-      mat-storked-button
+      mat-stroked-button
       aria-label="Close the edit profile button"
       mat-dialog-close
+      color="primary"
     >
       X
     </button>

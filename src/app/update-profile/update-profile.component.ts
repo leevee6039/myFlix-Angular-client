@@ -24,7 +24,7 @@ export class UpdateProfileComponent implements OnInit {
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
       console.log(result);
-      this.snackBar.open('Succesfully updated profile', 'OK', {
+      this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000,
       });
     });

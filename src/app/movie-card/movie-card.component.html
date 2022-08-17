@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="movie-view" style="display: flex">
-  <mat-card *ngFor="let movie of movies" style="flex: 1 1 auto">
+  <mat-card *ngFor="let movie of movies; let i = index" style="flex: 1 1 auto">
     <mat-card-header>
       <mat-card-title>{{ movie.Title }}</mat-card-title>
       <mat-card-subtitle
@@ -17,8 +17,8 @@
           color="primary"
         >
           {{ movie.Director.Name }}
-        </button></mat-card-subtitle
-      >
+        </button>
+      </mat-card-subtitle>
     </mat-card-header>
     <img
       src="{{ movie.ImagePath }}"
@@ -34,6 +34,7 @@
       >
         Genre
       </button>
+
       <button
         mat-button
         (click)="openSynopsisDialog(movie.Title, movie.Description)"
@@ -41,18 +42,21 @@
       >
         Synopsis
       </button>
+
       <!-- Render add to or remove from favorites button depending on isFav -->
       <button
         mat-button
         *ngIf="!isFav(movie._id)"
         (click)="addToFavoriteMovies(movie._id)"
+        color="primary"
       >
         <mat-icon>favorite_border</mat-icon>
       </button>
       <button
         mat-button
         *ngIf="isFav(movie._id)"
-        (click)="removeToFavoriteMovies(movie._id)"
+        (click)="removeFromFavoriteMovies(movie._id)"
+        color="primary"
       >
         <mat-icon>favorite</mat-icon>
       </button>

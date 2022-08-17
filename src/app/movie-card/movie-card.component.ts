@@ -28,7 +28,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Gets movies from api call and setsthe movies state to return JSON file
+   * Gets movies from api call and sets the movies state to return JSON file
    * @returns array holding movies objects
    */
   getMovies(): void {
@@ -40,7 +40,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * opens the user genre dialog form GenreComponent to displaying details
+   * opens the user genre dialog from GenreComponent to displaying details
    * @param name
    * @param description
    */
@@ -50,6 +50,7 @@ export class MovieCardComponent implements OnInit {
         Name: name,
         Description: description,
       },
+      // Assign dialog width
       width: '500px',
     });
   }
@@ -66,6 +67,7 @@ export class MovieCardComponent implements OnInit {
         Bio: bio,
         Birth: birthday,
       },
+      // Assign dialog width
       width: '500px',
     });
   }
@@ -77,7 +79,11 @@ export class MovieCardComponent implements OnInit {
    */
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
-      data: { Title: title, Description: description },
+      data: {
+        Title: title,
+        Description: description,
+      },
+      // Assign dialog width
       width: '500px',
     });
   }
@@ -98,14 +104,14 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * removes a movie to the list of favorite movies via an API call
+   * removes a movie from the list of favorite movies via an API call
    * @param id
    */
-  removeToFavoriteMovies(id: string): void {
+  removeFromFavoriteMovies(id: string): void {
     console.log(id);
     this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
       console.log(result);
-      this.snackBar.open('Successfully removed movie to favorites!', 'OK', {
+      this.snackBar.open('Successfully removed movie from favorites!', 'OK', {
         duration: 2000,
       });
       this.ngOnInit();
@@ -113,19 +119,19 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * gets favorite movies from api call and sets the favorite movies variable to return JSON file
+   * Gets favorite movies from api call and sets the favorite movies variable to return JSON file
    * @returns array holding ids of user's favorite movies
    */
   getFavoriteMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((response: any) => {
-      this.favoriteMovies = response;
+    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+      this.favoriteMovies = resp;
       console.log(this.favoriteMovies);
       return this.favoriteMovies;
     });
   }
 
   /**
-   * checks if a movie is inclued in the user's list of favorite movies
+   * checks if a movie is included in the user's list of favorite movies
    * @param id
    * @returns true, if the movie is a favorite move, else false
    */

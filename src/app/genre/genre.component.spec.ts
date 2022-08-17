@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserLoginFormComponent } from './user-login-form.component';
+import { GenreComponent } from './genre.component';
 
-describe('UserLoginFormComponent', () => {
-  let component: UserLoginFormComponent;
-  let fixture: ComponentFixture<UserLoginFormComponent>;
+describe('GenreComponent', () => {
+  let component: GenreComponent;
+  let fixture: ComponentFixture<GenreComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserLoginFormComponent ]
+      declarations: [ GenreComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserLoginFormComponent);
+    fixture = TestBed.createComponent(GenreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -60,7 +60,9 @@ I use **Angular Material** to style the UI of my application to make it responsi
 
 - Transferring data from one component to the other (e.g., from movie-card-component to genre-component). Found the solution by 'Injecting' the variables using @Inject(MAT_DIALOG_DATA).
 
-## Development Process for the chat application
+- The application requires a service to get the favorite movies of a user. As this API endpoint was not defined yet, I had to go back to the backend code and add this GET endpoint.
+
+## Development Process for the movies application
 
 ### Install Angular
 
@@ -198,4 +200,20 @@ ng add angular-cli-ghpages.
 
 ```bash
  ng deploy --base-href=/<repository-name>/.
+```
+
+### Add TypeDoc Documentation
+
+1. Install typedoc (if not yet installed):
+
+```bash
+npm install typedoc
+```
+
+2. Check that code is commented adhering to best practices
+
+3. Run typedoc to create documentation:
+
+```bash
+typedoc --entryPointStrategy expand ./src
 ```
